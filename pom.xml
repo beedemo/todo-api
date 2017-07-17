@@ -105,6 +105,27 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+      <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <executions>
+              <execution>
+                  <id>copy-resources</id>
+                  <phase>validate</phase>
+                  <goals>
+                      <goal>copy-resources</goal>
+                  </goals>
+                  <configuration>
+                      <outputDirectory>${basedir}/target/</outputDirectory>
+                      <resources>
+                          <resource>
+                              <directory>.docker</directory>
+                              <filtering>true</filtering>
+                          </resource>
+                      </resources>
+                  </configuration>
+              </execution>
+          </executions>
+      </plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
