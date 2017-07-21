@@ -4,4 +4,5 @@ mavenProject {
 	repo = 'todo-api'
         jdk = '8'
 	rebuildBuildImage = true
+	
 }
