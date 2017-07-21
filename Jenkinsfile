@@ -1,6 +1,6 @@
 #!groovy
 mavenProject {
-	org = 'sa-team'
+	org = 'beedemo'
 	repo = 'todo-api'
         jdk = '8'
 }
