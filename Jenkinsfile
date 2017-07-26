@@ -4,7 +4,6 @@ pipeline {
 		buildDiscarder(logRotator(numToKeepStr: '5')) 
     }
 	agent { label 'maven-jdk-8' }
-	script { artifactName='*.jar' }
   
   	stages {
 		stage('Build') {
@@ -51,7 +50,7 @@ pipeline {
 	post {				
 		success {
 			unstash 'artifactName'
-			archive "target/${artifactName}"
+			archive "target/*.jar"
 		}
 	}
 }
