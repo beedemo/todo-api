@@ -30,7 +30,7 @@ pipeline {
 				"integration tests": {
 					echo 'integration tests'
 					sh 'mvn verify'    						// generate a maven integration test report
-				}	
+				},	
 				"other tests": {
 					echo 'other tests'
 					junit '**/target/surefire-reports/TEST-*.xml'    // generate a junit test report
