@@ -23,18 +23,17 @@ pipeline {
 			parallel(
 				"unit test": {
 					echo 'unit tests'
-					mvn test
-					mvn surefire-report:report			// generate a maven unit test report using surefire
+					sh 'mvn test'
+					sh 'mvn surefire-report:report'			// generate a maven unit test report using surefire
 					// this is the path to your unit test report: your-project/target/site/surefire-report.html
 				},
 				"integration tests": {
 					echo 'integration tests'
-					mvn verify    						// generate a maven integration test report
+					sh 'mvn verify'    						// generate a maven integration test report
 				}	
 				"other tests": {
 					echo 'other tests'
 					junit '**/target/surefire-reports/TEST-*.xml'    // generate a junit test report
-					archive 'target/*.jar'
 				}
 			)
 		  }
