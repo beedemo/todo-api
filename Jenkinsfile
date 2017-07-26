@@ -1,24 +1,13 @@
 pipeline {
     options { 
         timeout(time: 5, unit: 'MINUTES')
-		buildDiscarder(logRotator(numToKeepStr: '5')) 
-        skipDefaultCheckout() 
+	buildDiscarder(logRotator(numToKeepStr: '5')) 
     }
     agent none
 
 	artifactName='*.jar'
   
   	stages {
-		stage('Checkout') {
-			agent { label 'docker-cloud' }
-				steps {
-					echo 'INFO - Retrieving Source'
-			//		git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-					checkout scm
-					gitShortCommit(7)
-				}
-			}
-		checkpoint 'after Checkout before Build'
 		stage('Build') {
 		  steps {
 			echo 'INFO - Starting Build phase'
