@@ -3,7 +3,7 @@ pipeline {
         timeout(time: 5, unit: 'MINUTES')
 		buildDiscarder(logRotator(numToKeepStr: '5')) 
     }
-	agent 'maven-jdk-8'
+	agent { label 'maven-jdk-8' }
 	script { artifactName='*.jar' }
   
   	stages {
