@@ -1,6 +1,5 @@
 #!groovy
-def timestamp = new Date().format("EEE, d MMM yyyy HH:mm:ss Z")
-echo timestamp
+System.getenv().ES_HOST
 mavenProject {
 	org = 'beedemo'
 	repo = 'todo-api'
