@@ -130,7 +130,7 @@
 
 	<properties>
 		<jersey.version>2.13</jersey.version>
-		<spring.version>4.3.18.RELEASE</spring.version>
+		<spring.version>5.3.19</spring.version>
 		<joda.version>2.3</joda.version>
 		<grizzly.version>2.3.11</grizzly.version>
 		<servlet-api-version>3.0.1</servlet-api-version>
